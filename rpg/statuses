@@ -1,0 +1,14 @@
+#################
+Status Changes
+#################
+Poison - HP loss every turn
+Curse - HP loss every attack -OR- does not attack
+Darkness - AGI decrease for attacks and defense
+Slow - AGI decrease for turn frequency
+Stop - misses 1 or more turns
+Haste - AGI increase for turn frequency
+Confused - Attack oneself or not attack at all (funny messages)
+Asleep - Can't move.  Perhaps awakened by being attacked?
+Petrify - Can't move and don't wake up.  can still be attacked.
+Mute - Cannot cast spells
+Invisible - Do not attract enemies

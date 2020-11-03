@@ -1,0 +1,5 @@
+-based on AGI
+
+bucket method
+
+Each character has a "bucket".  All buckets are the same size, say 100 points.  There will be a battle loop.  Each step through the loop, the character's bucket will be incremented by their AGI points.  When their bucket is >= 100, it will be their turn.  If more than one character reaches this point in the same step, there will be a method to choose which of them will go first (higher AGI?, random, something else).  Multiple characters will be placed in a queue.  After each as taken a turn, the loop steps again.

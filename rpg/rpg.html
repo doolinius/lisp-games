@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JD-SRPG - A Strategy RPG Engine</title>
+    <link href="rpg.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>JD-SRPG - A Strategy RPG Engine</h1>
+      <h3>(just a working name... it's lame, I know)</h3>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>This is a simple design document for a turn-based Strategy RPG game engine I'm developing.  It is largely inspired by the Shining Force series of SRPGs, but also by elements from other SRPGs, sci-fi/fantasy books and some of my own ideas.</p>
+      <h2>Maps and Exploration</h2>
+      <p>I intend for there to be exploration, both villages/towns and a world/regional map.  This is in contrast to almost all of the Fire Emblem series and the Game Gear Shining Force games, which eschewed ALL exploration.  It was simply a series of battles with cut scenes and a standard "camp" before each battle with access to a shop, priest, character management, etc.</p>
+      <p>Shining Force 1 and 2 both featured village, castle, dungeon, cavern, etc., exploration, but Shining Force 2 featured far more extensive world exploration.  SF1 prevented backtracking to most completed areas and there was no world map.  SF2 followed a more Final Fantasy type exploration, complete with a few (but VERY few) areas where random encounters/battles could occur.</p>
+      <p>JD-SRPG will offer world exploration, but at this point I'm undecided as to how to implement it.  Here are the options I'm considering:</p>
+      <ul>
+	<li><strong>Final Fantasy/SF2 type</strong> - A world map with villages, caves, special areas, etc. accessible.  You may be required to fight a battle to move from one area to the next, at which point the area is clear.  Some areas may continue to produce random encounters.</li>
+	<li><strong>Chrono Trigger type</strong> - Very similar to FF/SF2 type, but where individual locations/buildings are accessible rather than entire villages.  Some areas may require battle to pass, such as forests, deserts, caves, bridges and so on.  Functionally, for the purpose of a SRPG, I don't think there's much this one would do that FF/SF2 wouldn't</li>
+	<li><strong>FEDA Emblem of Justice type</strong> - This one is different, a little more like Final Fantasy Tactics, where the map is composed of points of interest and routes between them.  Rather than walk from point to point, you simply press a direction and your character automatically moves to one.  The difference in FEDA is that you can actually be pursued by enemy units on this map.  If you encounter one, you will do battle at that particular point, be it a bridge, mountain pass, forest, etc.  The coolest thing about this is that you could potentially choose where you will do battle.  Perhaps one stage is more suited to your force than another.</li>
+	<li><strong>A Combination</strong> - Perhaps a combination of one or more of the above.</li>
+      </ul>
+      <h4>Battle Maps</h4>
+      <p>Battles can take place within villages, caves, dungeons or on the overworld itself.  They will be 2D overhead as in Shining Force.  The terrain will affect movement of characters as well as melee attack damage and possibly effects of certain magic, but I haven't decided.</p>
+      <p>Searching will be possible in battle.</p>
+      <h2>Turn System</h2>
+      <p>The battles will be turn based.  Turns will be determined by an Agility statistic.  It will use the "fill" model, where the battle loop will run in "steps".  Each character will have a sort-of bucket variable.  With each step in the loop, a character's bucket is filled by their agility rating.  Any time a character's bucket reaches some particular value, say 50, they get a turn.</p>
+      <p>For example, let's say Larry's agility is 10, Moe's is 15 and Curly's is 8.  At the start of the battle, all their buckets are at 0.  After one round, the buckets look like so:</p>
+      <p>Larry = 10, Moe = 15, Curly = 8</p>
+      <p>Nobody gets a turn at this step of the game since nobody's bucket is full.  After two steps:</p>
+      <p>Larry = 20, Moe = 30, Curly = 16</p>
+      <p>After three steps:</p>
+      <p>Larry = 30, Moe = 45, Curly = 24</p>
+      <p>Finally, after four steps:</p>
+      <p>Larry = 40, Moe = 60, Curly = 32</p>
+      <p>Moe's bucket has gone above 50, so he'll get a turn.  His points will also carry over, so after Moe's turn, the buckets will look like:</p>
+      <p>Larry = 40, Moe = 10, Curly = 32</p>
+      <p>After a fifth step:</p>
+      <p>Larry = 50, Moe = 25, Curly = 40</p>
+      <p>It is clear by now that Moe's agility is a great benefit, as he will get many more turns than Larry or Curly.  Characters with Moe's agility will be theives/rogues, snipers, assassins, etc.</p>
+      <p><strong>So what happens when two characters' buckets pass 50 on the same step?</strong>  Good question, and I haven't decided yet.  Here are the possibilities I've thought of:</p>
+      <ul>
+	<li>Random - just pick one at random from the list of characters who could take a turn</li>
+	<li>Highest Agility - Another benefit of agility, the one with higher agility would get to go first</li>
+	<li>Highest Bucket - Because the bucket's value stays greater than 50 until the character's turn is taken, this could be used as the tie breaker</li>
+    </section>
+    
+  </body>
+</html>

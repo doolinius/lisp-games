@@ -1,0 +1,114 @@
+1. Game Front End
+This is the first thing the player will see. It takes care of setting up the story, and allows the player to load previous saves or start a new game:
+
+Introductory Credits
+Intro Sequence
+Title Screen
+Game select screen (load game, save game and start new game)
+New game screen
+Introductory cut-scene on new game
+
+2. Towns
+This is where exploring the game world takes place, and will almost certainly be the first thing the player sees after starting a new game.
+
+Tile based maps
+Animated tiles (for waterfalls, rivers etc)
+Animated objects
+Walking around
+Collision with buildings/trees/objects
+Collision with NPC’s (they may be moving around)
+Treasure chests
+Book shelves
+Inspectable pots, crates, barrels, cupboards etc
+Walking NPC’s
+Talking to NPC’s (may need to access game state/story progression to show certain text)
+Picking up items
+GHQ
+Advice
+Transfer items
+Transfer characters
+Show characters in Force
+Moving to another town/overworld map/battle
+
+3. Shops
+Shops are a vital part of the Shining experience, as they allow the player to upgrade their character’s equipment, as well as purchase supplies for battles.
+
+Item (weapons, items or armour) shop
+Sell Item
+Buy Item (and optionally equip / sell old item)
+Repair equipment
+Deals section
+Smithy
+Create new item from mythril / dark matter
+Church
+Cure poison
+Remove curse
+Promote character
+Resurrect character
+Save game
+
+4. Cut scenes
+Cut scenes help to tell the story. They can be something as simple as a character running off screen, to a fully scripted action sequence.
+
+Changing the music
+Playing sounds
+Moving characters/objects/whatever around
+Shaking the screen
+Fading the screen
+Displaying text
+Changing to a different map
+Small animated spell effects
+Yes/No questions
+Character joins/leaves force
+Change weather/time of day/general ambience
+Character shakes head, nods head, falls over
+
+5. Battles
+Battles are the core part of Shining Force games, and are possibly the most complex in the game as they involve artificial intelligence, path finding and movement range calculations, as well as cut scenes.
+
+Damage calculation
+Darkness (e.g. limited vision in a cave)
+Cut scenes
+Spawning enemies when certain areas reached
+Path finding AI
+Decision making AI
+Movement area (glowing tiles)
++Attack range
++Spell effect range
+Fight cut scenes
++Magic spells
++Item use
+Special attacks
++Support/Status effects
+Land effect
++"Support" (BOOST) spell
++"Slow" spell
++"Attack" spell
++Sleep
+Friendships (SF3 only)
++Poison
++Curse
++Confusion
++Frozen feet
++Lost in an illusion/blinded
++Paralysis
++Experience gains
+Level up
+Egress
+Move cursor around map
+View character/enemy stats
+
+6. Menus
+Menus allow the player to interact with various entities, as well as manage their squad.
+
+Town Menu (Inspect, Items, Team, Magic)
+Item Menu (Use, Equip, Drop Item, Give Item)
+Team list
+Equipment Menu (Equip Weapon, Use Weapon, Equip Accessory, Use Accessory)
+Church Menu (Revive, Promote, Save, Cure)
+Battle Menu – Character’s Move (Attack, Items, Defend, Magic)
+Battle Menu – Nobody Selected (Team, Tactics, Save, Map)
+Shop Menu (Buy, Repair, Deals, Sell)
+Decision Menu (Yes / No)
+Item Listing (Selecting an item to equip/use/give)
+Team Listing (selecting a team member to give to/take from/promote etc)
