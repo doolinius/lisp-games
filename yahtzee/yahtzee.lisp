@@ -1,3 +1,4 @@
+;;; global variables
 (defvar *dice*)
 (defvar *players*)
 (defvar *rules*)
